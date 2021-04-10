@@ -40,13 +40,9 @@ class HashTable:
         my_set = set()
         for items in self.data:
             if items:
-                if len(items) == 1:
-                    data_element = "{key}: {value}".format(key=items[0], value=items[1])
+                for single_item in items:
+                    data_element = "{key}: {value}".format(key=single_item[0], value=single_item[1])
                     my_set.add(data_element)
-                else:
-                    for single_item in items:
-                        data_element = "{key}: {value}".format(key=single_item[0], value=single_item[1])
-                        my_set.add(data_element)
         return str(my_set)
 
     def items(self) -> list:
@@ -93,17 +89,12 @@ class HashTable:
         """
         for items in self.data:
             if items:
-                if len(items) == 1 and items[0][0] == key:
-                    self.data.remove(items)
-                    return True
-                else:
-                    for item_data in items:
-                        if item_data[0] == key:
-                            index = self.data.index(items)
-                            self.data[index].remove(item_data)
-                            return True
+                for item_data in items:
+                    if item_data[0] == key:
+                        index = self.data.index(items)
+                        self.data[index].remove(item_data)
+                        return True
         return False
-
 
 if __name__ == '__main__':
     my_hashtable = HashTable(5)

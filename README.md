@@ -7,13 +7,13 @@ HashTable is a python library (Data Structure) it has almost all functionality o
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install HashTable.
 
 ```bash
-pip install hashtable
+pip install hashtable-python
 ```
 
 ## Usage
 
 ```python
-from HashTable import HashTable
+from hashtable import HashTable
 
 my_hashtable = HashTable(5)  # Create instance of hashtable with fixed sized 5
 my_hashtable['mango'] = 100  # Creating key='mango' and value=100
